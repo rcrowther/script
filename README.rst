@@ -15,7 +15,7 @@ I've used it more than once, so it gets to be split away. It was/is intended for
 
 Compiling (and jars)
 ====================
-``script`` compiles with ``ssc`. If this is not available, use the shell script. A compile script exists because ``script`` is trivial. 
+``script`` compiles with ``ssc``. If this is not available, use the shell script. A compile script exists because ``script`` is trivial. 
 
 ...and if that doesn't fit your workflow, rebuild the folders and write your definitions for Eclipse/SBT/Maven, whatever.
 
