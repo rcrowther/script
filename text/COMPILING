@@ -1,0 +1,24 @@
+This library is compiled with SSC. 
+
+== Background
+OpenJDK is fine. Most current Java versions are fine.
+
+
+== Compile with SSC
+> ssc compile
+> ssc doc
+
+
+== Compile with the scripts
+Run,
+
+> ./make_compile_and_jar
+> ./make_docs
+
+
+== Compile with SBT/Maven etc.
+In general, unlike SSC, Java tools expect directories in fixed positions. Either fiddle with the configuration (I think Maven allows this?), or cut and paste the contents of /src into a new folder structure /src/main/scala.
+
+These kinds of tools will need appropriate build file to be written, too.
+
+

@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#
+##############################################################################
+# Copyright 20015 rcrowther
+#
+# This is free software; see the distribution for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+##############################################################################
+
+## Point at a scala installation
+# If empty tries for an installed version.
+#SCALA_HOME=""
+
+## Point at a jar installation
+# If empty tries for an installed version.
+#JAVA_HOME=""
+
+if [[ -n "$SCALA_HOME" ]]; then
+SCALAEXE="$SCALA_HOME/bin/scalac" 
+else
+SCALAEXE="scalac"
+fi
+
+
+
+if [[ -n "$JAVA_HOME" ]]; then
+JAREXE="$JAVA_HOME/bin/" 
+else
+JAREXE="jar"
+fi
+
+mkdir build
+mkdir build/main
+mkdir build/main/scala
+PWD="$(pwd)"
+echo "compiling..."
+
+
+SRCS="$(find $PWD/src/ | grep scala$)"
+#echo ${SRCS}
+
+# Compile
+$SCALAEXE -d build/main/scala $SRCS
+
+# Make .jar
+echo $JAREXE
+echo "Manifest-Version: 1.0
+Specification-Title: script" > "$PWD/MANIFEST.MF"
+
+$JAREXE cfm script.jar MANIFEST.MF -C build/main/scala .

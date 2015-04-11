@@ -1,0 +1,6 @@
+Need to fix shell. It's ugly.
+
+Sockets would be nice.
+
+Could throw in a find() to the file handlers?
+Entry.clear() needs implementing

@@ -1,0 +1,36 @@
+Documentation for the Script library.
+
+
+The script library provides quick and consistent methodology for otherwise involved actions. It was/is intended for purposes such as scripting, REPL work, and fly testing.
+
+
+== Package structure ==
+
+The packages are split into two main branches,
+  - [[script.system]] - System related code, such as finding launch directories, system-installed executables, and shell invokation.
+  - [[script.io]] - IO related code, such as returning traversables of paths from directories, file manipulation, and a basic script-orientated oputput formatter. 
+
+
+The packages sometimes categorise into `throwing` and `noThrowing`. These either contain methods throwing exceptions, or methods protected against throwing exceptions.
+
+
+== Method invokation ==
+
+Many public methods are heaped in an `object`. So they use a more 'c'-like notation than the usual OOP,
+
+{{{
+import script.file.Entry
+
+val txt: String = Entry.read(path)
+}}}
+
+This notation was seen as more appropriate for a scripting enviroment (and is sometimes seen in Java).
+
+
+== Automatic imports ==
+
+Packages in 'script' can be imported completely. The package objects provide several identifiers improving the help.
+
+Some of these identifiers are type aliases provided as shortcuts to recommended classes. The recommended classes are usually from `throwing` subclasses. For example, `file.Dir` is an alias for [[script.file.throwing.Dir]].
+
+Other aliases refer to helper classes. These often wrap classes from the Java platform, for example, importing `script.file` will give `file.pathOps`. This class has, amongst other methods, methods for retrieving file extensions from a Path object.

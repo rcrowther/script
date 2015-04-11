@@ -1,0 +1,12 @@
+# ignore bin directories
+# matches "bin" in any subfolder
+bin/
+
+# ignore target directories
+build/
+
+# ignore jars
+**/*.jar
+
+# ignore files ending with ~
+**/*~

@@ -1,0 +1,15 @@
+# Build file for SSC
+
+# Set project data,
+# and make always verbose
+
+# Identify .jars
+[jar]
+appVersion = 0.2.1
+appName = script
+
+[doc]
+docDir = doc
+title = ScriptLib
+footer = by rcrowther
+rootdoc = src/rootdoc.txt
